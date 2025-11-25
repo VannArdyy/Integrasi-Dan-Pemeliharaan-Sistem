@@ -1,0 +1,41 @@
+integrasi dan pemeliharaan system
+tes rendah di threads user 17
+tes sedang di threads user 77
+tes berat di threads user 177
+
+response times 
+stabil di 11ms di setiap threads, mulai dari 17, 77, dan 177 dengan ramps up 5s dan loop 5 kali
+
+throughput
+di threads 17 ramp up 5 loop 5 adalah 14,4/sec
+di threads 77 ramp up 5 loop 5 adalah 17,5/sec
+di threads 177 ramp up 5 loop 5 adalah 24,4/sec
+
+persentase error
+di threads 17 ramp up 5 loop 5 adalah 2,22%
+di threads 77 ramp up 5 loop 5 adalah 2,27%
+di threads 177 ramp up 5 loop 5 adalah 2,53%
+
+cpu/memory usage
+di tes ringan dengan 17 threads ramp up 5 loop 5 cpu usage stabil di angka 1-20% sebelum tes dimulai
+dan untuk memori usage bertahan di 82% kemudian Ketika tes dijalankan cpu usage naik menjadi 44-75% lalu untuk memory usage hanya ada 
+peningkatan minor sampai 84% Ketika run berjalan
+
+di tes sedang dengan 77 threads ramp up 5 loop 5 cpu usage stabil di angka 1-20% sebelum tes dimulai
+dan untuk memori usage bertahan di 81% kemudian Ketika tes dijalankan cpu usage naik sampai 50% untuk tes pertama kali lalu untuk memory usage hanya ada peningkatan minor sampai 83% Ketika run berjalan
+
+di tes berat dengan 177 threads ramp up 5 loop 5 cpu usage stabil di angka 1-20% sebelum tes dimulai
+dan untuk memori usage bertahan di 79% kemudian Ketika tes dijalankan cpu usage naik sampai 47% untuk tes pertama kali lalu untuk memory usage hanya ada peningkatan minor sampai 81% Ketika run berjalan
+
+beberapa hal menarik throughput yang dihasilkan meningkat Ketika run dijalankan berulang, dengan persentase eror tidak berfungsi dan 
+diam di 0% namun cpu dan memory usage sepertinya menurun Ketika menjalankan tipe tes di 77 dan 177 threads peningkatan tertinggi
+tercatat Ketika pertama kali melakukan tes di 17 threads. 
+
+error yang tidak berfungsi kemungkinan ada beberapa alasan, pengujian dilakukan untuk setiap tipe tes sudah dilakukan beberapa kali sebelumnya, dengan hasil yang tidak stabil dan terkadang seperti tes tidak berjalan sama sekali, ada masalah di bagian network. mengapa saya dapat menyimpulkan demikian, karena Waktu pengujian dilakukan sekitar pukul 21.00 tanggal 23 bulan 11 2025 hasil tes menunjukan eror pada rentang 12-16% dengan threads, ramp up, dan looping yang sama. kemudian pukul 15.00 tanggal 24 bulan 11 2025 menunjukan rentang error di kisaran 8-10% dengan throughput tes sebelumnya hampir sama/mendekati. tes ketiga kalinya pukul 18.00 hari yang sama error menunjukan kisaran 2% dengan throughput dijabarkan diatas, lalu pada tes terakhir pada hari yang sama pukul 22.34 tes dilakukan Kembali dengan error nihil atau 0% di setiap tipe tes dengan throughput sangat rendah kisaran 6/sec untuk tes ringan dan 12/sec untuk tes berat. ini menunjukan waktu pengujian mempengaruhi hasil dari pengetesan yang dilakukan, dan cenderung descending/menurun. 
+
+alat yang digunakan untuk pengetesan adalah sebuah laptop Lenovo dengan spec Processor AMD Ryzen 3 7320U with Radeon Graphics, 2401 Mhz, 4 Core(s), 8 Logical Processor(s), ram 8 gb, ssd nvme 256gb. 
+
+pengetesan dilakukan dengan alat yang sama, dan sebuah web prototype yang dibuat sendiri dengan teknologi dan framework seperti tailwind, react, node js, juga sudah terconnect dengan GitHub, untuk server adalah server MongoDb dan sudah run sebelum pengetesan dilakukan untuk melihat hasil sebenarnya dalam localhost.
+
+latency 
+/////
